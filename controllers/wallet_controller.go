@@ -62,13 +62,13 @@ func GetWallet(walletId string, w http.ResponseWriter) models.Wallet {
 }
 func WalletTransactionQuery() string {
 	return `SELECT 
-    transaction.id,
-    transaction.idWallet,
-    transaction.datetime,
-    transaction.amount,
-    transaction.description
-FROM wallet JOIN transaction
-ON wallet.id = transaction.idWallet `
+		transaction.id,
+		transaction.idWallet,
+		transaction.datetime,
+		transaction.amount,
+		transaction.description
+	FROM wallet JOIN transaction
+	ON wallet.id = transaction.idWallet `
 }
 func UpdateWallet(w http.ResponseWriter, r *http.Request) {
 	db := Connect()
